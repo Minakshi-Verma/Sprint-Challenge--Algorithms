@@ -99,21 +99,26 @@ class SortingRobot:
       
         # can swap items using swap_item() method
         # can compare with compare_item() method: return 1 if item>self._list, return -1 if item<self._list
-        for i in range(0, len(self._list)-1):            
-            # while self.move_right() is True:
-            for j in range(0,i):
+
+        # for i in range(0,(len(self._list)-1)): 
+        for i in range((len(self._list)-1), 0, -1):        
+            #start, stop, step: 
+            print(self._list)             
+            self.swap_item()          
+           
+            for j in range(0, i):
                 # compare item and based on +1 or -1, move right or left
-                if self.compare_item() ==-1: 
-                    self.swap_item()
+                if self.compare_item() ==-1: #the item robot is holding is smaller than the item already at that position
+                    self.swap_item()  #swap it
                 self.move_right() # move to right
-                if self.compare_item() == 1:
-                    # self.swap_item()
-                    print("item is in order")
-                self.move_right()
-            return self._list.sort()  
 
-
-        
+                if self.compare_item() ==1:  #if item in robot's hand is bigger
+                    self.swap_item()
+               
+                # self.move_right()
+            while self.can_move_left(): 
+                self.move_left()   # reach to the very left
+            self.swap_item()        
 
 
 if __name__ == "__main__":
