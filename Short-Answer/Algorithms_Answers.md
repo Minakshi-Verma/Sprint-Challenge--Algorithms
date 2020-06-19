@@ -18,8 +18,8 @@ Building can be considered as a sorted array as the 2nd floor would be on the to
 # go to mid floor of the building(n/2) and drop the egg
 -if egg is broken, we are at floor f or higher.means we need to move to lower floor to find the right floor. Consider this midfloor as a "temp top floor" for now.
 # move 1 floor down, and go to mid floor again(consider (temp top floor-1) as a top floor for this search) 
--if egg is broken again, we will will go 1 floor down the mtemp mid floor and continue to search for right floor.Repeat the process.
-- if egg is not broken, we will consider this floor as  "temp bottom floor" for our next search. now we will go half way up to check if egg gets broken from that floor. We will reapeat till we find the right floor.
+-if egg is broken again, we will will go 1 floor down the temp mid floor and continue to search for right floor and repeat the process.
+- if egg is not broken, we will consider this floor as  "temp bottom floor" for our next search. Now we will go half way up to check if egg gets broken from that floor. We will reapeat till we find the right floor.
 
 
 
